@@ -57,6 +57,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="scripts\_references.js" />
+    <Content Include="scripts\app.js" />
+    <Content Include="scripts\controllers\home-controller.js" />
+    <Content Include="styles\app.css" />
     <Content Include="styles\bootstrap.css" />
     <Content Include="styles\toastr.css" />
     <Content Include="styles\toastr.min.css" />
@@ -864,15 +868,13 @@
     <Content Include="lib\toastr\toastr.min.js" />
     <Content Include="lib\bootstrap\bootstrap.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />
+    <Content Include="views\partials\home.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="scripts\controllers\" />
-    <Folder Include="views\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
