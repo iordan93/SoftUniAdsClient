@@ -17,3 +17,4 @@
 /// <reference path="app.js" />
 /// <reference path="controllers/home-controller.js" />
 /// <reference path="services/resources/ads-resource.js" />
+/// <reference path="filters/standard-date.js" />

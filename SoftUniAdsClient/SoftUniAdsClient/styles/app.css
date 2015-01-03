@@ -8,3 +8,7 @@
 .navbar-brand {
     float: none;
 }
+
+.item-heading {
+    font-size: 1.5em;
+}
