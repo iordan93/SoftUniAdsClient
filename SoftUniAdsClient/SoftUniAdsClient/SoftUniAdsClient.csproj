@@ -60,6 +60,7 @@
     <None Include="scripts\_references.js" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\home-controller.js" />
+    <Content Include="scripts\services\resources\ads-resource.js" />
     <Content Include="styles\app.css" />
     <Content Include="styles\bootstrap.css" />
     <Content Include="styles\toastr.css" />
