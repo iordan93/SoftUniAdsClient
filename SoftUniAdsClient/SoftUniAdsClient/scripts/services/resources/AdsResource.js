@@ -7,7 +7,6 @@
                 angular.forEach(data.ads, function (ad) {
                     ad.imageDataUrl = ad.imageDataUrl || "http://placehold.it/150";
                 });
-                console.log(data);
 
                 return data;
             }

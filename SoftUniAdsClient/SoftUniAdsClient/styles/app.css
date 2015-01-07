@@ -12,3 +12,12 @@
 .item-heading {
     font-size: 1.5em;
 }
+
+.item-image {
+    min-width: 75%;
+    max-width: 100%;
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}

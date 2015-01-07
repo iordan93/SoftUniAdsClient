@@ -1,0 +1,30 @@
+﻿<ul>
+    <li ng-repeat="ad in adsInfo.ads" class="list-unstyled">
+        <!-- TODO: Make a better styling -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>
+                    <strong>{{ ad.title }}</strong>
+                    <span class="pull-right">{{ ad.date | standardDate }}</span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <img src="" alt="{{ ad.title }}" ng-src="{{ ad.imageDataUrl }}" class="item-image" />
+                    </div>
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                        <div class="well">{{ ad.text }}</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Name: {{ ad.ownerName }}</li>
+                            <li class="list-group-item">Email: <a href="mailto://{{ ad.ownerEmail }}">{{ ad.ownerEmail }}</a></li>
+                            <li class="list-group-item">Tel.: {{ ad.ownerPhone }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<div pagination total-items="numItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="loadNewPage()"></div>
