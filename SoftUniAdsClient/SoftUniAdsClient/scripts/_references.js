@@ -22,3 +22,4 @@
 /// <reference path="../lib/angular-ui/ui-bootstrap.js" />
 /// <reference path="services/resources/townsresource.js" />
 /// <reference path="services/resources/categoriesresource.js" />
+/// <reference path="controllers/rightsidebarcontroller.js" />

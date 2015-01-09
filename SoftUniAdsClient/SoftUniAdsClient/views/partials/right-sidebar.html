@@ -1,14 +1,23 @@
-﻿<aside class="col-md-2 col-sm-2 hidden-xs">
+﻿<aside class="col-md-2 col-sm-2 hidden-xs" ng-controller="RightSidebarController">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Categories</h3>
+            
         </div>
-        <div class="panel-body"> Panel content </div>
+        <div class="panel-body">
+            <ul>
+                <li ng-repeat="category in categories">{{ category.name }}</li>
+            </ul>
+        </div>
     </div>
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Towns</h3>
         </div>
-        <div class="panel-body"> Panel content </div>
+        <div class="panel-body">
+            <ul>
+                <li ng-repeat="town in towns">{{ town.name }}</li>
+            </ul>
+        </div>
     </div>
 </aside>

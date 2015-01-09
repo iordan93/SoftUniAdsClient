@@ -64,6 +64,7 @@
     <Content Include="lib\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\HomeController.js" />
+    <Content Include="scripts\controllers\RightSidebarController.js" />
     <Content Include="scripts\filters\standard-date.js" />
     <Content Include="scripts\services\resources\AdsResource.js" />
     <Content Include="scripts\services\resources\CategoriesResource.js" />
