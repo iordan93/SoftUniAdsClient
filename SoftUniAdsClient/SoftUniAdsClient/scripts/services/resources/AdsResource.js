@@ -1,5 +1,5 @@
 ﻿app.factory("AdsResource", ["$resource", "baseUrl", function ($resource, baseUrl) {
-    var adsResource = $resource(baseUrl + "api/ads", null, {
+    var adsResource = $resource(baseUrl + "ads", null, {
         "all": {
             method: "GET",
             transformResponse: function (data, headers) {
@@ -14,8 +14,8 @@
     });
 
     return {
-        all: function () {
-            return adsResource.all();
+        all: function (params, success, error) {
+            return adsResource.all(params, success, error);
         }
     };
 }]);

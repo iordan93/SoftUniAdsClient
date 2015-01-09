@@ -26,5 +26,7 @@
         </div>
     </li>
 </ul>
-
-<div pagination total-items="numItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="loadNewPage()"></div>
+<div class="text-center">
+    <pagination total-items="adsInfo.numItems" ng-model="parameters.startPage" items-per-page="parameters.pageSize"
+                ng-change="getAds()" max-size="9" boundary-links="true"></pagination>
+</div>
