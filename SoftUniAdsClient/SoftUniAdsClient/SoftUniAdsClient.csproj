@@ -66,6 +66,8 @@
     <Content Include="scripts\controllers\HomeController.js" />
     <Content Include="scripts\filters\standard-date.js" />
     <Content Include="scripts\services\resources\AdsResource.js" />
+    <Content Include="scripts\services\resources\CategoriesResource.js" />
+    <Content Include="scripts\services\resources\TownsResource.js" />
     <Content Include="styles\app.css" />
     <Content Include="styles\bootstrap.css" />
     <Content Include="styles\toastr.css" />
