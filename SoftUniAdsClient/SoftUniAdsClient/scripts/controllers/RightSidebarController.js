@@ -4,11 +4,13 @@
         $scope.selectedCategoryId = null;
         $scope.selectCategory = function (id) {
             $scope.selectedCategoryId = id;
+            $rootScope.$broadcast("categoryFilterChanged", id);
         };
 
         $scope.towns = TownsResource.all();
          $scope.selectedTownId = null;
         $scope.selectTown = function (id) {
             $scope.selectedTownId = id;
+            $rootScope.$broadcast("townFilterChanged", id);
         };
 }]);
