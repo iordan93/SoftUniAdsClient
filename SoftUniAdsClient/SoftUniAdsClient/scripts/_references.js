@@ -20,5 +20,5 @@
 /// <reference path="services/resources/adsresource.js" />
 /// <reference path="../lib/angular-ui/ui-bootstrap-tpls.js" />
 /// <reference path="../lib/angular-ui/ui-bootstrap.js" />
-/// <reference path="services/resources/categoriesresource.js" />
 /// <reference path="services/resources/townsresource.js" />
+/// <reference path="services/resources/categoriesresource.js" />
