@@ -21,14 +21,24 @@
             url: baseUrl + "user/ads/deactivate/:id",
             params: { id: "@id" },
             headers: AccountService.getAuthHeaders()
+        },
+        "update": {
+            method: "PUT",
+            params: { id: "@id" },
+            headers: AccountService.getAuthHeaders()
         }
     });
 
     function transformResponse(data, headers) {
         data = angular.fromJson(data);
-        angular.forEach(data.ads, function (ad) {
-            ad.imageDataUrl = ad.imageDataUrl || "images/no-photo.png";
-        });
+        if (data.ads) {
+            angular.forEach(data.ads, function (ad) {
+                ad.imageDataUrl = ad.imageDataUrl || "images/no-photo.png";
+            });
+        }
+        else {
+            data.imageDataUrl = data.imageDataUrl || "images/no-photo.png";
+        }
 
         return data;
     }
@@ -45,6 +55,9 @@
         },
         deactivateAd: function (id, success, error) {
             return adsUserResource.deactivate({ id: id }, success, error);
+        },
+        updateAd: function (ad, success, error) {
+            return adsUserResource.update(ad, success, error);
         }
     };
 }]);

@@ -887,6 +887,7 @@
     <Content Include="views\partials\left-sidebar.html" />
     <Content Include="views\register.html" />
     <Content Include="views\partials\right-sidebar.html" />
+    <Content Include="views\user\edit-ad.html" />
     <Content Include="views\user\my-ads.html" />
     <Content Include="views\user\publish-new-ad.html" />
     <Content Include="Web.config" />

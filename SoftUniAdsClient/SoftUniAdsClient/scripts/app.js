@@ -33,6 +33,12 @@ app
                 pageName: "publish",
                 pageTitle: "Publish New Ad"
             })
+            .when("/user/editAd/:id", {
+                templateUrl: "views/user/edit-ad.html",
+                controller: "UserAdsController",
+                pageName: "edit",
+                pageTitle: "Edit Ad"
+            })
             .when("/user/profile", {
                 //templateUrl: "views/register.html",
                 //controller: "LoginController",

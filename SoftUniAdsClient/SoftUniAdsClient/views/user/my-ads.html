@@ -22,9 +22,10 @@
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
                         Status:
                         <div class="well text-center">{{ ad.status | status }}</div>
-                        <button class="btn btn-block btn-lg btn-danger" ng-if="ad.status != 'Inactive'" ng-click="deactivateAd(ad.id)">Deactivate</button>
-                        <div ng-if="ad.status == 'Inactive'">
-                            <button class="btn btn-block btn-lg btn-primary" ng-click="editAd(ad.id)">Edit</button>
+                        <button class="btn btn-block btn-lg btn-danger" ng-if="ad.status != 'Inactive' && ad.status != 'Rejected'" 
+                                ng-click="deactivateAd(ad.id)">Deactivate</button>
+                        <div ng-if="ad.status == 'Inactive' || ad.status == 'Rejected'">
+                            <a href="#/user/editAd/{{ad.id}}" class="btn btn-block btn-lg btn-primary">Edit</a>
                             <button class="btn btn-block btn-lg btn-primary" ng-click="publishAgainAd(ad.id)">Publish again</button>
                             <button class="btn btn-block btn-lg btn-danger" ng-click="deleteAd(ad.id)">Delete</button>
                         </div>

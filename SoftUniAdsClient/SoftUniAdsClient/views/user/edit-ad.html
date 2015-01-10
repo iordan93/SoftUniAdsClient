@@ -1,33 +1,24 @@
-﻿<form class="form-horizontal" name="userPublishAdForm">
+﻿<form class="form-horizontal" name="userEditAdForm">
     <fieldset>
-        <legend>Publish New Ad</legend>
+        <legend>Edit Ad</legend>
         <div class="row">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                 <div class="form-group">
                     <label for="title" class="col-sm-2 control-label">Title</label>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <input type="text" ng-model="newAd.title" class="form-control" id="title" placeholder="Title" required />
+                        <input type="text" ng-model="editAd.title" class="form-control" id="title" placeholder="Title" required />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="text" class="col-sm-2 control-label">Text</label>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <textarea ng-model="newAd.text" class="form-control" id="text" placeholder="Text" required />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="image" class="col-sm-2 control-label">Image</label>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <span class="btn btn-primary btn-file">
-                            Browse...
-                            <input type="file" id="image" onchange="angular.element(this).scope().fileSelected(this)" />
-                        </span>
+                        <textarea ng-model="editAd.text" class="form-control" id="text" placeholder="Text" required />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="category" class="col-sm-2 control-label">Category</label>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <select ng-model="newAd.categoryId" class="form-control" id="category">
+                        <select ng-model="editAd.categoryId" class="form-control" id="category">
                             <option value="null">(None)</option>
                             <option ng-repeat="category in categories" value="{{ category.id }}">{{ category.name }}</option>
                         </select>
@@ -36,7 +27,7 @@
                 <div class="form-group">
                     <label for="town" class="col-sm-2 control-label">Town</label>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <select ng-model="newAd.townId" class="form-control" id="town">
+                        <select ng-model="editAd.townId" class="form-control" id="town">
                             <option value="null">(None)</option>
                             <option ng-repeat="town in towns" value="{{ town.id }}">{{ town.name }}</option>
                         </select>
@@ -44,14 +35,23 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary" ng-click="publishAd(newAd)" ng-disabled="!userPublishAdForm.$valid">Publish</button>
+                        <button type="submit" class="btn btn-primary" ng-click="updateAd(editAd)" ng-disabled="!userEditAdForm.$valid">Edit</button>
                         <button type="reset" class="btn btn-default" ng-click="cancel()">Cancel</button>
                     </div>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                <div class="image-box"></div>
+                <div class="image-box">
+                    <img ng-src="{{ editAd.imageDataUrl }}" />
+                </div>
+                <br />
+                <span class="btn btn-block btn-primary btn-file">
+                    Change image
+                    <input type="file" id="image" onchange="angular.element(this).scope().fileSelected(this, true)" />
+                </span>
+                <button class="btn btn-block btn-danger" ng-click="removeImage()">Remove image</button>
             </div>
         </div>
     </fieldset>
 </form>
+
