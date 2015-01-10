@@ -44,6 +44,19 @@
             });
         }
 
+        $scope.deleteAd = function (ad) {
+            AdsResource.deleteAd(ad, function (data) {
+                debugger;
+                NotificationService.displaySuccessMessage("Ad deleted successfully.");
+                $timeout(function () {
+                    $location.path("/user/ads");
+                }, 5000);
+            }, function (error) {
+                debugger;
+                NotificationService.displayErrorMessage("Ad could not be deleted", error);
+            });
+        }
+
         $scope.getMyAds = function () {
             AdsResource.myAds($scope.parameters,
                 function (data) {

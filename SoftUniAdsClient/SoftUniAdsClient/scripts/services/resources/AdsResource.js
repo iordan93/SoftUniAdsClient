@@ -26,6 +26,11 @@
             method: "PUT",
             params: { id: "@id" },
             headers: AccountService.getAuthHeaders()
+        },
+        "delete": {
+            method: "DELETE",
+            params: { id: "@id" },
+            headers: AccountService.getAuthHeaders()
         }
     });
 
@@ -58,6 +63,9 @@
         },
         updateAd: function (ad, success, error) {
             return adsUserResource.update(ad, success, error);
+        },
+        deleteAd: function (ad, success, error) {
+            return adsUserResource.delete(ad, success, error);
         }
     };
 }]);

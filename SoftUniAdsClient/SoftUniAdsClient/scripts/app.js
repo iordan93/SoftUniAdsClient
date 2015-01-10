@@ -39,6 +39,12 @@ app
                 pageName: "edit",
                 pageTitle: "Edit Ad"
             })
+            .when("/user/deleteAd/:id", {
+                templateUrl: "views/user/delete-ad.html",
+                controller: "UserAdsController",
+                pageName: "delete",
+                pageTitle: "Delete Ad"
+            })
             .when("/user/profile", {
                 //templateUrl: "views/register.html",
                 //controller: "LoginController",
