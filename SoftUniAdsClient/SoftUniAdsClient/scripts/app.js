@@ -3,15 +3,37 @@ app
     .constant("baseUrl", "http://softuni-ads.azurewebsites.net/api/")
     .config(["$routeProvider", function ($routeProvider) {
         $routeProvider
-         .when("/", {
-             templateUrl: "views/home.html",
-             controller: "HomeController"
-         })
-        .when("/login", {
-            templateUrl: "views/login.html",
-            controller: "LoginController"
-        })
-         .otherwise({
-             redirectTo: "/"
-         });
+            .when("/", {
+                templateUrl: "views/home.html",
+                controller: "HomeController",
+                pageName: "home"
+            })
+            .when("/login", {
+                templateUrl: "views/login.html",
+                controller: "LoginController",
+                pageName: "login"
+            })
+            .when("/register", {
+                templateUrl: "views/register.html",
+                controller: "LoginController",
+                pageName: "register"
+            })
+            .when("/myads", {
+                //templateUrl: "views/register.html",
+                //controller: "LoginController",
+                pageName: "myads"
+            })
+            .when("/publish", {
+                //templateUrl: "views/register.html",
+                //controller: "LoginController",
+                pageName: "publish"
+            })
+            .when("/profile", {
+                //templateUrl: "views/register.html",
+                //controller: "LoginController",
+                pageName: "profile"
+            })
+            .otherwise({
+                 redirectTo: "/"
+             });
     }]);

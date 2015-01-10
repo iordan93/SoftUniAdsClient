@@ -1,4 +1,11 @@
-﻿app.controller("AppController", ["$scope", "AccountService", "NotificationService", function ($scope, AccountService, NotificationService) {
-    $scope.AccountService = AccountService;
-    $scope.isAnonymous = AccountService.isAnonymous();
-}]);
+﻿app.controller("AppController", ["$scope", "$route", "$location", "AccountService", "NotificationService",
+    function ($scope, $route, $location, AccountService, NotificationService) {
+        $scope.$route = $route;
+        $scope.AccountService = AccountService;
+
+        $scope.logout = function () {
+            AccountService.logout();
+            NotificationService.displaySuccessMessage("Logout successful.");
+            $location.path("#/");
+        }
+    }]);

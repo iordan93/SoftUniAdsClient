@@ -1,7 +1,9 @@
-﻿app.factory("NotificationService", ["$rootScope", "$timeout", function ($rootScope, $timeout) {
+﻿app.factory("NotificationService", ["$rootScope", "$timeout", "$sce", function ($rootScope, $timeout, $sce) {
+    var DEFAULT_TIMEOUT = 5000;
     $rootScope.notifications = [];
     var service = {
         add: function (type, message, timeout) {
+            timeout = timeout || DEFAULT_TIMEOUT;
             $rootScope.notifications.push({
                 type: type,
                 msg: message,
@@ -10,11 +12,9 @@
                 }
             });
 
-            if (timeout) {
-                $timeout(function () {
-                    service.closeNotification(this);
-                }, timeout);
-            }
+            $timeout(function () {
+                service.closeNotification(this);
+            }, timeout);
         },
         closeNotification: function (notification) {
             return service.closeNotificationByIndex($rootScope.notifications.indexOf(notification));
@@ -26,16 +26,16 @@
 
     return {
         displaySuccessMessage: function (message, timeout) {
-            return service.add("success", message, timeout);
+            return service.add("success", $sce.trustAsHtml(message), timeout);
         },
-        displayErrorMessage: function (message, timeout) {
+        displayErrorMessage: function (message, serverError, timeout) {
             var errors = [];
-            if (message && message.error_description) {
-                errors.push(message.error_description);
+            if (serverError && serverError.error_description) {
+                errors.push(serverError.error_description);
             }
 
-            if (message && message.modelState) {
-                var modelStateErrors = message.modelState;
+            if (serverError && serverError.modelState) {
+                var modelStateErrors = serverError.modelState;
                 for (var propertyName in modelStateErrors) {
                     var errorMessages = modelStateErrors[propertyName];
                     var trimmedName = propertyName.substr(propertyName.indexOf(".") + 1);
@@ -49,8 +49,8 @@
             if (errors.length > 0) {
                 message += ":<br>" + errors.join("<br>");
             }
-
-            return service.add("danger", message, timeout);
+            debugger;
+            return service.add("danger", $sce.trustAsHtml(message), timeout);
         }
     };
 }]);

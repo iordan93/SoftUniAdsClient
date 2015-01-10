@@ -5,7 +5,7 @@
                 NotificationService.displaySuccessMessage("Login successful.");
                 $location.path("/");
             }, function (error) {
-                NotificationService.displayErrorMessage(error);
+                NotificationService.displayErrorMessage("Login unsuccessful", error);
             });
         }
     }]);

@@ -12,7 +12,9 @@
         <div class="row">
             <ng-include src="'views/partials/left-sidebar.html'"></ng-include>
             <div class="col-md-8 col-sm-8 col-xs-9">
-                <alert ng-repeat="notification in notifications" type="{{notification.type}}" close="notification.close($index)">{{notification.msg}}</alert>
+                <alert ng-repeat="notification in notifications" type="{{notification.type}}" close="notification.close($index)">
+                    <span ng-bind-html="notification.msg"></span>
+                </alert>
 
                 <ng-view></ng-view>
             </div>
