@@ -3,7 +3,7 @@
 <head>
     <title>SoftUni Ads</title>
     <link href="styles/bootstrap.css" rel="stylesheet" />
-    <link href="styles/toastr.css" rel="stylesheet" />
+    <link href="styles/angular-notify.css" rel="stylesheet" />
     <link href="styles/app.css" rel="stylesheet" />
 </head>
 <body ng-app="softUniAds" ng-cloak ng-controller="AppController">
@@ -12,16 +12,18 @@
     <main class="container-fluid">
         <div class="row">
             <ng-include src="'views/partials/left-sidebar.html'"></ng-include>
-            <div class="col-md-8 col-sm-8 col-xs-9" ng-view></div>
+            <div class="col-md-8 col-sm-8 col-xs-9">
+                <alert ng-repeat="notification in notifications" type="{{notification.type}}" close="notification.close($index)">{{notification.msg}}</alert>
+                <ng-view></ng-view>
+            </div>
             <ng-include src="'views/partials/right-sidebar.html'"></ng-include>
         </div>
     </main>
     <ng-include src="'views/partials/footer.html'"></ng-include>
 
     <script src="lib/jquery/jquery-2.1.3.min.js"></script>
-    <script src="lib/toastr/toastr.min.js"></script>
     <script src="lib/bootstrap/bootstrap.min.js"></script>
-    
+
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular/angular-resource.min.js"></script>
     <script src="lib/angular/angular-route.min.js"></script>

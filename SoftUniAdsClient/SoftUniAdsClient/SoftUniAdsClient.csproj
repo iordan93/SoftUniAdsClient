@@ -74,10 +74,10 @@
     <Content Include="scripts\services\resources\AdsResource.js" />
     <Content Include="scripts\services\resources\CategoriesResource.js" />
     <Content Include="scripts\services\resources\TownsResource.js" />
+    <Content Include="styles\angular-notify.css" />
+    <Content Include="styles\angular-notify.min.css" />
     <Content Include="styles\app.css" />
     <Content Include="styles\bootstrap.css" />
-    <Content Include="styles\toastr.css" />
-    <Content Include="styles\toastr.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -866,9 +866,6 @@
     <Content Include="lib\angular\angular-aria.min.js.map" />
     <Content Include="lib\angular\angular-animate.min.js.map" />
     <Content Include="lib\angular\angular.min.js.map" />
-    <Content Include="styles\toastr.css.map">
-      <DependentUpon>toastr.css</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -878,8 +875,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="lib\toastr\toastr.js" />
-    <Content Include="lib\toastr\toastr.min.js" />
     <Content Include="lib\bootstrap\bootstrap.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />
     <Content Include="views\home.html" />

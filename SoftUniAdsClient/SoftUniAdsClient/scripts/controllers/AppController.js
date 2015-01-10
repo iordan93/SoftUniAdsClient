@@ -1,3 +1,3 @@
-﻿app.controller("AppController", ["$scope", function ($scope) {
+﻿app.controller("AppController", ["$scope", "NotificationService", function ($scope, NotificationService) {
 
 }]);

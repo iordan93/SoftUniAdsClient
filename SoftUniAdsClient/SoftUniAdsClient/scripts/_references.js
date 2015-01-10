@@ -12,7 +12,6 @@
 /// <reference path="../lib/angular/angular-scenario.js" />
 /// <reference path="../lib/angular/angular-touch.js" />
 /// <reference path="../lib/angular/angular.js" />
-/// <reference path="../lib/toastr/toastr.js" />
 /// <reference path="../lib/bootstrap/bootstrap.js" />
 /// <reference path="app.js" />
 /// <reference path="filters/standard-date.js" />
