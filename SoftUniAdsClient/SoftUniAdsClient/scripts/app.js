@@ -33,6 +33,26 @@ app
                 //controller: "LoginController",
                 pageName: "profile"
             })
+            .when("/admin/ads", {
+                //templateUrl: "views/register.html",
+                //controller: "LoginController",
+                pageName: "adminAds"
+            })
+            .when("/admin/users", {
+                //templateUrl: "views/register.html",
+                //controller: "LoginController",
+                pageName: "adminUsers"
+            })
+            .when("/admin/categories", {
+                //templateUrl: "views/register.html",
+                //controller: "LoginController",
+                pageName: "adminCategories"
+            })
+            .when("/admin/towns", {
+                //templateUrl: "views/register.html",
+                //controller: "LoginController",
+                pageName: "adminTowns"
+            })
             .otherwise({
                  redirectTo: "/"
              });
