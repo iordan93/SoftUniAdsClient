@@ -18,7 +18,23 @@
             });
         };
 
+        $scope.fileSelected = function (fileInputField) {
+            var file = fileInputField.files[0];
+            if (file.type.match(/image\/.*/)) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    $scope.newAd.imageDataUrl = reader.result;
+                    $(".image-box").html("<img src='" + reader.result + "'>");
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                $(".image-box").html("<p>File type not supported!</p>");
+            }
+        };
+
+
         $scope.cancel = function () {
             $location.path("#/");
-        }
+        };
     }]);
