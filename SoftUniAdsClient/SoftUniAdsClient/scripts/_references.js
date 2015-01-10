@@ -23,3 +23,4 @@
 /// <reference path="services/resources/townsresource.js" />
 /// <reference path="services/resources/categoriesresource.js" />
 /// <reference path="controllers/rightsidebarcontroller.js" />
+/// <reference path="services/accountservice.js" />

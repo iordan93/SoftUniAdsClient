@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="scripts\_references.js" />
+    <Content Include="images\no-photo.png" />
     <Content Include="lib\angular-ui\ui-bootstrap-tpls.js" />
     <Content Include="lib\angular-ui\ui-bootstrap-tpls.min.js" />
     <Content Include="lib\angular-ui\ui-bootstrap.js" />
@@ -66,6 +67,7 @@
     <Content Include="scripts\controllers\HomeController.js" />
     <Content Include="scripts\controllers\RightSidebarController.js" />
     <Content Include="scripts\filters\standard-date.js" />
+    <Content Include="scripts\services\AccountService.js" />
     <Content Include="scripts\services\resources\AdsResource.js" />
     <Content Include="scripts\services\resources\CategoriesResource.js" />
     <Content Include="scripts\services\resources\TownsResource.js" />

@@ -5,7 +5,7 @@
             transformResponse: function (data, headers) {
                 data = angular.fromJson(data);
                 angular.forEach(data.ads, function (ad) {
-                    ad.imageDataUrl = ad.imageDataUrl || "http://placehold.it/150";
+                    ad.imageDataUrl = ad.imageDataUrl || "images/no-photo.png";
                 });
 
                 return data;
