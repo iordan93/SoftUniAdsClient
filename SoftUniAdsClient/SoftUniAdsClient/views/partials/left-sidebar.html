@@ -3,9 +3,18 @@
         <div class="panel-heading">
             <h3 class="panel-title">Navigation</h3>
         </div>
-        <div class="panel-body"> Panel content </div>
+        <div class="panel-body" ng-if="isAnonymous">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#/Home">Home</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="panel panel-primary">
-        <div class="panel-body"> Panel content </div>
+
+    <div class="panel panel-info" ng-if="isAnonymous">
+        <div class="panel-body">
+            <p>To publish a new ad, please log in or register.</p>
+            <a class="btn btn-block btn-info" href="#/login">Login</a>
+            <a class="btn btn-block btn-info" href="#/register">Register</a>
+        </div>
     </div>
 </aside>

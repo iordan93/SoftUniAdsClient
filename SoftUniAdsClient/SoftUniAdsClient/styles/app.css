@@ -9,6 +9,10 @@
     float: none;
 }
 
+.well {
+    word-wrap: break-word;
+}
+
 .item-heading {
     font-size: 1.5em;
 }

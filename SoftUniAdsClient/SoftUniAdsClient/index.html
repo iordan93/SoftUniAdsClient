@@ -8,12 +8,12 @@
 </head>
 <body ng-app="softUniAds" ng-cloak ng-controller="AppController">
     <ng-include src="'views/partials/header.html'"></ng-include>
-    <a class="btn btn-danger" href="#/login">Login</a>
     <main class="container-fluid">
         <div class="row">
             <ng-include src="'views/partials/left-sidebar.html'"></ng-include>
             <div class="col-md-8 col-sm-8 col-xs-9">
                 <alert ng-repeat="notification in notifications" type="{{notification.type}}" close="notification.close($index)">{{notification.msg}}</alert>
+
                 <ng-view></ng-view>
             </div>
             <ng-include src="'views/partials/right-sidebar.html'"></ng-include>

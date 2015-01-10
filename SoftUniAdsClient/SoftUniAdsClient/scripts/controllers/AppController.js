@@ -1,3 +1,4 @@
-﻿app.controller("AppController", ["$scope", "NotificationService", function ($scope, NotificationService) {
-
+﻿app.controller("AppController", ["$scope", "AccountService", "NotificationService", function ($scope, AccountService, NotificationService) {
+    $scope.AccountService = AccountService;
+    $scope.isAnonymous = AccountService.isAnonymous();
 }]);

@@ -1,3 +1,11 @@
-﻿app.controller("LoginController", ["$scope", "NotificationService", function ($scope, NotificationService) {
-    NotificationService.displayErrorMessage("sdsdsd");
-}]);
+﻿app.controller("LoginController", ["$scope", "AccountService", "NotificationService", "$location",
+    function ($scope, AccountService, NotificationService, $location) {
+        $scope.login = function (userData) {
+            AccountService.login(userData, function (data) {
+                NotificationService.displaySuccessMessage("Login successful.");
+                $location.path("/");
+            }, function (error) {
+                NotificationService.displayErrorMessage(error);
+            });
+        }
+    }]);
