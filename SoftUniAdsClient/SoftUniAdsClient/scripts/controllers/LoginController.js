@@ -3,7 +3,7 @@
         $scope.login = function (userData) {
             AccountService.login(userData, function (data) {
                 NotificationService.displaySuccessMessage("Login successful.");
-                $location.path("/");
+                $location.path("#/");
             }, function (error) {
                 NotificationService.displayErrorMessage("Login unsuccessful", error);
             });

@@ -67,6 +67,7 @@
     <Content Include="scripts\controllers\AppController.js" />
     <Content Include="scripts\controllers\HomeController.js" />
     <Content Include="scripts\controllers\LoginController.js" />
+    <Content Include="scripts\controllers\RegisterController.js" />
     <Content Include="scripts\controllers\RightSidebarController.js" />
     <Content Include="scripts\filters\standard-date.js" />
     <Content Include="scripts\services\AccountService.js" />
@@ -882,13 +883,16 @@
     <Content Include="views\partials\footer.html" />
     <Content Include="views\partials\header.html" />
     <Content Include="views\partials\left-sidebar.html" />
+    <Content Include="views\register.html" />
     <Content Include="views\partials\right-sidebar.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="scripts\directives\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,20 +1,21 @@
-﻿app.controller("RegisterController", ["$scope", "TownsResource", "AccountService", "NotificationService",
-    function ($scope, TownsResource, AccountService, NotificationService) {
-    $scope.towns = TownsResource.all();
+﻿app.controller("RegisterController", ["$scope", "$location", "TownsResource", "AccountService", "NotificationService",
+    function ($scope, $location, TownsResource, AccountService, NotificationService) {
+        $scope.userData = {
+            townId: null
+        };
+        $scope.towns = TownsResource.all();
 
-    $scope.register = function (userData) {
-        if (userData.password != userData.confirmPassword) {
-            NotificationService.displayErrorMessage("The passwords do not match.");
-            return;
+        $scope.register = function (userData) {
+            if (userData.password != userData.confirmPassword) {
+                NotificationService.displayErrorMessage("The passwords do not match.");
+                return;
+            }
+
+            AccountService.register(userData, function (data) {
+                NotificationService.displaySuccessMessage("Registration successful.");
+                $location.path("#/");
+            }, function (error) {
+                NotificationService.displayErrorMessage("Registration unsuccessful", error);
+            });
         }
-
-        userData.townId = userData.town.id;
-        AccountService.register(userData, function (data) {
-            debugger;
-            NotificationService.displaySuccessMessage("Registration successful.");
-            $location.path("/");
-        }, function (error) {
-            NotificationService.displayErrorMessage("Registration unsuccessful", error);
-        });
-    }
-}]);
+    }]);
