@@ -1,0 +1,40 @@
+﻿<ul>
+    <li ng-repeat="ad in adsInfo.ads" class="list-unstyled">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>
+                    <strong>{{ ad.title }}</strong>
+                    <span class="pull-right">{{ ad.date | standardDate }}</span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <img src="" alt="{{ ad.title }}" ng-src="{{ ad.imageDataUrl }}" class="item-image" />
+                    </div>
+                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                        <div class="well">{{ ad.text }}</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Category: {{ ad.categoryName || "(None)" }}</li>
+                            <li class="list-group-item">Town: {{ ad.townName || "(None)" }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
+                        Status:
+                        <div class="well text-center">{{ ad.status | status }}</div>
+                        <button class="btn btn-block btn-lg btn-danger" ng-if="ad.status != 'Inactive'" ng-click="deactivateAd(ad.id)">Deactivate</button>
+                        <div ng-if="ad.status == 'Inactive'">
+                            <button class="btn btn-block btn-lg btn-primary" ng-click="editAd(ad.id)">Edit</button>
+                            <button class="btn btn-block btn-lg btn-primary" ng-click="publishAgainAd(ad.id)">Publish again</button>
+                            <button class="btn btn-block btn-lg btn-danger" ng-click="deleteAd(ad.id)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="text-center">
+    <pagination total-items="adsInfo.numItems" ng-model="parameters.startPage" items-per-page="parameters.pageSize"
+                ng-change="getMyAds()" max-size="9" boundary-links="true"></pagination>
+</div>

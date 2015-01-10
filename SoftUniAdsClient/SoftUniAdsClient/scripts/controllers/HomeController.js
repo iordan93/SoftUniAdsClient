@@ -8,7 +8,6 @@
         AdsResource.all($scope.parameters,
             function (data) {
                 $scope.adsInfo = data;
-            }, function (error) {
             });
     }
 

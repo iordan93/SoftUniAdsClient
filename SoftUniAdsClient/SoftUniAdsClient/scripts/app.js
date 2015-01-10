@@ -22,8 +22,8 @@ app
                 pageTitle: "Registration"
             })
             .when("/user/ads", {
-                //templateUrl: "views/register.html",
-                //controller: "LoginController",
+                templateUrl: "views/user/my-ads.html",
+                controller: "UserAdsController",
                 pageName: "myads",
                 pageTitle: "My Ads"
             })

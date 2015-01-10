@@ -1,7 +1,22 @@
-﻿app.controller("UserAdsController", ["$scope", "$location", "$timeout", "CategoriesResource", "TownsResource", "AdsResource", "AccountService", "NotificationService",
+﻿app.controller("UserAdsController",
+    ["$scope", "$location", "$timeout", "CategoriesResource", "TownsResource", "AdsResource", "AccountService", "NotificationService",
     function ($scope, $location, $timeout, CategoriesResource, TownsResource, AdsResource, AccountService, NotificationService) {
         $scope.categories = CategoriesResource.all();
         $scope.towns = TownsResource.all();
+        $scope.parameters = {
+            startPage: 1,
+            pageSize: 2
+        };
+
+        $scope.getMyAds = function () {
+            AdsResource.myAds($scope.parameters,
+                function (data) {
+                    $scope.adsInfo = data;
+                });
+        }
+
+        $scope.getMyAds();
+
         $scope.newAd = {
             townId: null,
             categoryId: null
@@ -37,4 +52,14 @@
         $scope.cancel = function () {
             $location.path("#/");
         };
+
+        $scope.deactivateAd = function (id) {
+            AdsResource.deactivateAd(id, function (data) {
+                NotificationService.displaySuccessMessage("Advertisement deactivated successfully.");
+                $scope.getMyAds();
+            }, function (error) {
+                NotificationService.displaySuccessMessage("Advertisement could not be deactivated.");
+                $scope.getMyAds();
+            });
+        }
     }]);

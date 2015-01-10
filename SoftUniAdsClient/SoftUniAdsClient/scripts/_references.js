@@ -28,3 +28,4 @@
 /// <reference path="controllers/appcontroller.js" />
 /// <reference path="controllers/registercontroller.js" />
 /// <reference path="controllers/useradscontroller.js" />
+/// <reference path="filters/status.js" />
