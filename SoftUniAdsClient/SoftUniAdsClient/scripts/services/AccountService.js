@@ -39,7 +39,7 @@
             }
         },
         isAnonymous: function () {
-            return localStorage[KEY_USER_DATA] == undefined;
+            return this.getCurrentUser() == undefined;
         },
         isLoggedIn: function () {
             return !this.isAnonymous();

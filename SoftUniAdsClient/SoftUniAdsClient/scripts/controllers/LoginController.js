@@ -7,5 +7,5 @@
             }, function (error) {
                 NotificationService.displayErrorMessage("Login unsuccessful", error);
             });
-        }
+        };
     }]);

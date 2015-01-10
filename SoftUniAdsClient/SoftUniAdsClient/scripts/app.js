@@ -17,7 +17,7 @@ app
             })
             .when("/register", {
                 templateUrl: "views/register.html",
-                controller: "LoginController",
+                controller: "RegisterController",
                 pageName: "register",
                 pageTitle: "Registration"
             })

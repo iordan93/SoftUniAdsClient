@@ -26,3 +26,4 @@
 /// <reference path="controllers/logincontroller.js" />
 /// <reference path="services/notificationservice.js" />
 /// <reference path="controllers/appcontroller.js" />
+/// <reference path="controllers/registercontroller.js" />

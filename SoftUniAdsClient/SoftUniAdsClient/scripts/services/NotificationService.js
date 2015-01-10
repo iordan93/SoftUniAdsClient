@@ -49,7 +49,7 @@
             if (errors.length > 0) {
                 message += ":<br>" + errors.join("<br>");
             }
-            debugger;
+
             return service.add("danger", $sce.trustAsHtml(message), timeout);
         }
     };
