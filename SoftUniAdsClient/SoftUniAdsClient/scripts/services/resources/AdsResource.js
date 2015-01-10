@@ -1,5 +1,5 @@
-﻿app.factory("AdsResource", ["$resource", "baseUrl", function ($resource, baseUrl) {
-    var adsResource = $resource(baseUrl + "ads", null, {
+﻿app.factory("AdsResource", ["$resource", "baseUrl", "AccountService", function ($resource, baseUrl, AccountService) {
+    var adsResource = $resource(baseUrl + "ads/", null, {
         "all": {
             method: "GET",
             transformResponse: function (data, headers) {
@@ -13,9 +13,19 @@
         }
     });
 
+    var adsUserResource = $resource(baseUrl + "user/ads/:id", null, {
+        "publish": {
+            method: "POST",
+            headers: AccountService.getAuthHeaders()
+        }
+    });
+
     return {
         all: function (params, success, error) {
             return adsResource.all(params, success, error);
+        },
+        publish: function (ad, success, error) {
+            return adsUserResource.publish(ad, success, error);
         }
     };
 }]);

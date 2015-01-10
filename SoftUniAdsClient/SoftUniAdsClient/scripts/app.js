@@ -21,19 +21,19 @@ app
                 pageName: "register",
                 pageTitle: "Registration"
             })
-            .when("/myads", {
+            .when("/user/ads", {
                 //templateUrl: "views/register.html",
                 //controller: "LoginController",
                 pageName: "myads",
                 pageTitle: "My Ads"
             })
-            .when("/publish", {
-                //templateUrl: "views/register.html",
-                //controller: "LoginController",
+            .when("/user/publish", {
+                templateUrl: "views/user/publish-new-ad.html",
+                controller: "UserAdsController",
                 pageName: "publish",
                 pageTitle: "Publish New Ad"
             })
-            .when("/profile", {
+            .when("/user/profile", {
                 //templateUrl: "views/register.html",
                 //controller: "LoginController",
                 pageName: "profile",
@@ -64,6 +64,17 @@ app
                 pageTitle: "Towns"
             })
             .otherwise({
-                 redirectTo: "/"
-             });
+                redirectTo: "/"
+            });
+    }])
+    .run(["$rootScope", "$location", "AccountService", function ($rootScope, $location, AccountService) {
+        $rootScope.$on("$locationChangeStart", function (e) {
+            if ($location.path().indexOf("/user/") != -1 && !AccountService.isLoggedIn()) {
+                $location.path("#/");
+            }
+
+            if ($location.path().indexOf("/admin/") != -1 && !AccountService.isAdmin()) {
+                $location.path("#/");
+            }
+        });
     }]);

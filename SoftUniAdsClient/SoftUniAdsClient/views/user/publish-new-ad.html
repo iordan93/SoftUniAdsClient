@@ -1,0 +1,47 @@
+﻿<form class="form-horizontal" name="userPublishAdForm">
+    <fieldset>
+        <legend>Publish New Ad</legend>
+        <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">Title</label>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <input type="text" ng-model="newAd.title" class="form-control" id="title" placeholder="Title" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="text" class="col-sm-2 control-label">Text</label>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <textarea ng-model="newAd.text" class="form-control" id="text" placeholder="Text" required />
+            </div>
+        </div>
+        <!--<div class="form-group">
+            <label for="image" class="col-sm-2 control-label">Image</label>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <input type="text" ng-model="newAd.image" class="form-control" id="image" placeholder="Image" required />
+            </div>
+        </div>-->
+        <div class="form-group">
+            <label for="category" class="col-sm-2 control-label">Category</label>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <select ng-model="newAd.categoryId" class="form-control" id="category">
+                    <option value="null">(None)</option>
+                    <option ng-repeat="category in categories" value="{{ category.id }}">{{ category.name }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="town" class="col-sm-2 control-label">Town</label>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <select ng-model="newAd.townId" class="form-control" id="town">
+                    <option value="null">(None)</option>
+                    <option ng-repeat="town in towns" value="{{ town.id }}">{{ town.name }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary" ng-click="publishAd(newAd)" ng-disabled="!userPublishAdForm.$valid">Publish</button>
+                <button type="reset" class="btn btn-default" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

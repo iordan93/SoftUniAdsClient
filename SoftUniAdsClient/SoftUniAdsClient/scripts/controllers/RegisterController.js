@@ -3,6 +3,7 @@
         $scope.userData = {
             townId: null
         };
+
         $scope.towns = TownsResource.all();
 
         $scope.register = function (userData) {

@@ -11,9 +11,9 @@
         <div class="panel-body" ng-if="AccountService.isLoggedIn()">
             <ul class="nav nav-pills nav-stacked">
                 <li ng-class="{active: $route.current.pageName =='home'}"><a href="#/">Home</a></li>
-                <li ng-class="{active: $route.current.pageName =='myads'}"><a href="#/myads">My Ads</a></li>
-                <li ng-class="{active: $route.current.pageName =='publish'}"><a href="#/publish">Publish New Ad</a></li>
-                <li ng-class="{active: $route.current.pageName =='profile'}"><a href="#/profile">Edit Profile</a></li>
+                <li ng-class="{active: $route.current.pageName =='myads'}"><a href="#/user/ads">My Ads</a></li>
+                <li ng-class="{active: $route.current.pageName =='publish'}"><a href="#/user/publish">Publish New Ad</a></li>
+                <li ng-class="{active: $route.current.pageName =='profile'}"><a href="#/user/profile">Edit Profile</a></li>
                 <li><a ng-click="logout()">Logout</a></li>
             </ul>
         </div>
