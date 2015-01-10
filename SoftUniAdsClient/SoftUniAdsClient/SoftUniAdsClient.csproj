@@ -65,6 +65,7 @@
     <Content Include="lib\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\HomeController.js" />
+    <Content Include="scripts\controllers\LoginController.js" />
     <Content Include="scripts\controllers\RightSidebarController.js" />
     <Content Include="scripts\filters\standard-date.js" />
     <Content Include="scripts\services\AccountService.js" />
@@ -880,6 +881,7 @@
     <Content Include="lib\bootstrap\bootstrap.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />
     <Content Include="views\home.html" />
+    <Content Include="views\login.html" />
     <Content Include="views\partials\footer.html" />
     <Content Include="views\partials\header.html" />
     <Content Include="views\partials\left-sidebar.html" />

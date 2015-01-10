@@ -7,6 +7,10 @@ app.value("toastr", toastr)
              templateUrl: "views/home.html",
              controller: "HomeController"
          })
+        .when("/login", {
+            templateUrl: "views/login.html",
+            controller: "LoginController"
+        })
          .otherwise({
              redirectTo: "/"
          });

@@ -24,3 +24,4 @@
 /// <reference path="services/resources/categoriesresource.js" />
 /// <reference path="controllers/rightsidebarcontroller.js" />
 /// <reference path="services/accountservice.js" />
+/// <reference path="controllers/logincontroller.js" />
