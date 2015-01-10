@@ -6,7 +6,7 @@
     <link href="styles/toastr.css" rel="stylesheet" />
     <link href="styles/app.css" rel="stylesheet" />
 </head>
-<body ng-app="softUniAds" ng-cloak>
+<body ng-app="softUniAds" ng-cloak ng-controller="AppController">
     <ng-include src="'views/partials/header.html'"></ng-include>
     <a class="btn btn-danger" href="#/login">Login</a>
     <main class="container-fluid">
@@ -30,10 +30,12 @@
 
     <script src="scripts/app.js"></script>
 
+    <script src="scripts/controllers/AppController.js"></script>
     <script src="scripts/controllers/HomeController.js"></script>
     <script src="scripts/controllers/RightSidebarController.js"></script>
     <script src="scripts/controllers/LoginController.js"></script>
 
+    <script src="scripts/services/NotificationService.js"></script>
     <script src="scripts/services/resources/AdsResource.js"></script>
     <script src="scripts/services/resources/CategoriesResource.js"></script>
     <script src="scripts/services/resources/TownsResource.js"></script>

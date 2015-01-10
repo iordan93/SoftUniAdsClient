@@ -1,21 +1,22 @@
-﻿<form class="form-horizontal">
+﻿<alert type="success" close="close()">Msg</alert>
+<form class="form-horizontal">
     <fieldset>
         <legend>Login</legend>
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                <input type="text" class="form-control" id="login-username" placeholder="Username">
+                <input type="text" ng-model="userData.username" class="form-control" id="login-username" placeholder="Username">
             </div>
         </div>
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                <input type="password" class="form-control" id="login-password" placeholder="Password">
+                <input type="password" ng-model="userData.password" class="form-control" id="login-password" placeholder="Password">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary" ng-click="login(userData)">Login</button>
                 <a href="#/register" class="col-md-offset-1">Register here</a>
             </div>
         </div>

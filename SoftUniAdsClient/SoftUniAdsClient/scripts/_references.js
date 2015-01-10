@@ -25,3 +25,5 @@
 /// <reference path="controllers/rightsidebarcontroller.js" />
 /// <reference path="services/accountservice.js" />
 /// <reference path="controllers/logincontroller.js" />
+/// <reference path="services/notificationservice.js" />
+/// <reference path="controllers/appcontroller.js" />
