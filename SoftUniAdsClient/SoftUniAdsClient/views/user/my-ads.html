@@ -1,9 +1,9 @@
-﻿<ul>
-    <div ng-if="adsInfo.numItems == 0">
-        <div class="jumbotron">
-            <h3>There are currently no ads here.</h3>
-        </div>
+﻿<div ng-if="adsInfo.numItems == 0">
+    <div class="jumbotron">
+        <h3>There are currently no ads here.</h3>
     </div>
+</div>
+<ul>
     <li ng-repeat="ad in adsInfo.ads" class="list-unstyled">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -30,9 +30,9 @@
                         <button class="btn btn-block btn-lg btn-danger" ng-if="ad.status != 'Inactive' && ad.status != 'Rejected'" 
                                 ng-click="deactivateAd(ad.id)">Deactivate</button>
                         <div ng-if="ad.status == 'Inactive' || ad.status == 'Rejected'">
-                            <a href="#/user/editAd/{{ad.id}}" class="btn btn-block btn-lg btn-primary">Edit</a>
+                            <a href="#/user/editAd/{{ ad.id }}" class="btn btn-block btn-lg btn-primary">Edit</a>
                             <button class="btn btn-block btn-lg btn-primary" ng-click="publishAgainAd(ad)">Publish again</button>
-                            <a href="#/user/deleteAd/{{ad.id}}" class="btn btn-block btn-lg btn-danger">Delete</a>
+                            <a href="#/user/deleteAd/{{ ad.id }}" class="btn btn-block btn-lg btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>

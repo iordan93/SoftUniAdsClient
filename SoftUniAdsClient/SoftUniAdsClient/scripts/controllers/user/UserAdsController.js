@@ -30,12 +30,12 @@
             NotificationService.displaySuccessMessage("The image will be removed after the ad has been saved.");
         };
 
-        $scope.updateAd = function (editAd) {
-            if (editAd.imageDataUrl == "images/no-photo.png") {
-                editAd.imageDataUrl = null;
+        $scope.updateAd = function (ad) {
+            if (ad.imageDataUrl == "images/no-photo.png") {
+                ad.imageDataUrl = null;
             }
 
-            AdsResource.updateAd(editAd, function (data) {
+            AdsResource.updateAd(ad, function (data) {
                 NotificationService.displaySuccessMessage("Ad edited successfully. Don't forget to submit it for publishing.");
                 $timeout(function () {
                     $location.path("/user/ads");

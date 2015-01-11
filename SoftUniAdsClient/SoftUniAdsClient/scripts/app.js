@@ -57,6 +57,18 @@ app
                 pageName: "adminAds",
                 pageTitle: "Ads"
             })
+            .when("/admin/editAd/:id", {
+                templateUrl: "views/admin/edit-ad.html",
+                controller: "AdminAdsController",
+                pageName: "adminEdit",
+                pageTitle: "Edit Ad"
+            })
+            .when("/admin/deleteAd/:id", {
+                templateUrl: "views/admin/delete-ad.html",
+                controller: "AdminAdsController",
+                pageName: "adminDelete",
+                pageTitle: "Delete Ad"
+            })
             .when("/admin/users", {
                 //templateUrl: "views/register.html",
                 //controller: "LoginController",

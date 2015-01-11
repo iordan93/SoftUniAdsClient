@@ -1,9 +1,9 @@
-﻿<ul>
-    <div ng-if="adsInfo.numItems == 0">
-        <div class="jumbotron">
-            <h3>There are currently no ads here.</h3>
-        </div>
+﻿<div ng-if="adsInfo.numItems == 0">
+    <div class="jumbotron">
+        <h3>There are currently no ads here.</h3>
     </div>
+</div>
+<ul>
     <li ng-repeat="ad in adsInfo.ads" class="list-unstyled">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -30,6 +30,12 @@
                             <li class="list-group-item">Town: {{ ad.townName || "(None)" }}</li>
                         </ul>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><button class="btn btn-block btn-success" ng-click="approveAd(ad)">Approve</button></div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><button class="btn btn-block btn-warning" ng-click="rejectAd(ad)">Reject</button></div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><a class="btn btn-block btn-info" href="#/admin/editAd/{{ ad.id }}">Edit</a></div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><a class="btn btn-block btn-danger" href="#/admin/deleteAd/{{ ad.id }}">Delete</a></div>
                 </div>
             </div>
         </div>

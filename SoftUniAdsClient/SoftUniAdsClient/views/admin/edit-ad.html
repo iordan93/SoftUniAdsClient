@@ -1,0 +1,84 @@
+﻿<form class="form-horizontal" name="adminEditAdForm">
+    <fieldset>
+        <legend>Edit Ad</legend>
+        <div class="row">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <div class="form-group">
+                    <label for="title" class="col-sm-2 control-label">Title</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" ng-model="editAd.title" class="form-control" id="title" placeholder="Title" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Text</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <textarea ng-model="editAd.text" class="form-control" id="text" placeholder="Text" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ownerUsername" class="col-sm-2 control-label">Username</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" ng-model="editAd.ownerUsername" class="form-control" id="ownerUsername" placeholder="Username" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="category" class="col-sm-2 control-label">Category</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <select ng-model="editAd.categoryId" class="form-control" id="category">
+                            <option value="null">(None)</option>
+                            <option ng-repeat="category in categories" value="{{ category.id }}">{{ category.name }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="town" class="col-sm-2 control-label">Town</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <select ng-model="editAd.townId" class="form-control" id="town">
+                            <option value="null">(None)</option>
+                            <option ng-repeat="town in towns" value="{{ town.id }}">{{ town.name }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-sm-2 control-label">Date</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" ng-model="editAd.date" class="form-control" id="date" is-open="datePickerOpened" close-text="Close"
+                               datepicker-popup="dd-MMM-yyyy" datepicker-mode="day" starting-day="1" required />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary" ng-click="openDatepicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-2 control-label">Status</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <select ng-model="editAd.status" class="form-control" id="status" required>
+                            <option value="Inactive">Inactive</option>
+                            <option value="WaitingApproval">Waiting Approval</option>
+                            <option value="Published">Published</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary" ng-click="updateAd(editAd)" ng-disabled="!adminEditAdForm.$valid">Edit</button>
+                        <button type="reset" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                <div class="image-box">
+                    <img ng-src="{{ editAd.imageDataUrl }}" />
+                </div>
+                <br />
+                <span class="btn btn-block btn-primary btn-file">
+                    Change image
+                    <input type="file" id="image" onchange="angular.element(this).scope().fileSelected(this, true)" />
+                </span>
+                <button class="btn btn-block btn-danger" ng-click="removeImage()">Remove image</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
