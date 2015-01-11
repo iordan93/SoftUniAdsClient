@@ -1,44 +1,32 @@
-﻿<form class="form-horizontal" name="userEditAdForm">
+﻿<form class="form-horizontal" name="userDeleteAdForm">
     <fieldset>
         <legend>Confirm Deleting Ad</legend>
-        <div class="row">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                <div class="form-group">
-                    <label for="title" class="col-sm-2 control-label">Title</label>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <input type="text" ng-model="editAd.title" class="form-control" id="title" disabled />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="text" class="col-sm-2 control-label">Text</label>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <textarea ng-model="editAd.text" class="form-control" id="text" placeholder="Text" disabled />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="category" class="col-sm-2 control-label">Category</label>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <input type="text" ng-model="editAd.categoryName" class="form-control" id="category" placeholder="(None)" disabled />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="town" class="col-sm-2 control-label">Town</label>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <input type="text" ng-model="editAd.townName" class="form-control" id="category" placeholder="(None)" disabled />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary" ng-click="deleteAd(editAd)">Delete</button>
-                        <button type="reset" class="btn btn-default" ng-click="cancel()">Cancel</button>
-                    </div>
-                </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>
+                    <strong>{{ editAd.title }}</strong>
+                    <span class="pull-right">{{ editAd.date | standardDate }}</span>
+                </h3>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                <div class="image-box">
-                    <img ng-src="{{ editAd.imageDataUrl }}" />
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <img src="" alt="{{ editA.title }}" ng-src="{{ editAd.imageDataUrl }}" class="item-image" />
+                    </div>
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                        <div class="well">{{ editAd.text }}</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Category: {{ editAd.categoryName || "(None)" }}</li>
+                            <li class="list-group-item">Town: {{ editAd.townName || "(None)" }}</li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-10">
+                            <button type="submit" class="btn btn-primary" ng-click="deleteAd(editAd)">Delete</button>
+                            <button type="reset" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                        </div>
+                    </div>
                 </div>
-                <br />
             </div>
         </div>
     </fieldset>

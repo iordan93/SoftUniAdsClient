@@ -1,1 +1,37 @@
-﻿Delete
+﻿<form class="form-horizontal" name="adminDeleteAdForm">
+    <fieldset>
+        <legend>Confirm Deleting Ad</legend>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>
+                    <strong>{{ editAd.title }}</strong>
+                    <span class="pull-right">{{ editAd.date | standardDate }}</span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <img src="" alt="{{ editAd.title }}" ng-src="{{ editAd.imageDataUrl }}" class="item-image" />
+                    </div>
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                        <div class="well">{{ editAd.text }}</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Category: {{ editAd.categoryName || "(None)" }}</li>
+                            <li class="list-group-item">Town: {{ editAd.townName || "(None)" }}</li>
+                            <li class="list-group-item">Category: {{ editAd.ownerUsername }}</li>
+                            <li class="list-group-item">Town: {{ editAd.ownerName || "(None)" }}</li>
+                            <li class="list-group-item">Category: {{ editAd.ownerEmail || "(None)" }}</li>
+                            <li class="list-group-item">Town: {{ editAd.ownerPhone || "(None)" }}</li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-10">
+                            <button type="submit" class="btn btn-primary" ng-click="deleteAd(editAd)">Delete</button>
+                            <button type="reset" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>

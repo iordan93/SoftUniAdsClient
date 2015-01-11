@@ -21,6 +21,11 @@
             method: "PUT",
             params: { id: "@id" },
             headers: AccountService.getAuthHeaders()
+        },
+        "deleteAd": {
+            method: "DELETE",
+            params: { id: "@id" },
+            headers: AccountService.getAuthHeaders()
         }
     });
 
@@ -38,18 +43,5 @@
         return data;
     }
 
-    return {
-        all: function (params, success, error) {
-            return adsAdminResource.all(params, success, error)
-        },
-        approveAd: function (ad, success, error) {
-            return adsAdminResource.approveAd(ad, success, error);
-        },
-        rejectAd: function (ad, success, error) {
-            return adsAdminResource.rejectAd(ad, success, error);
-        },
-        updateAd: function (ad, success, error) {
-            return adsAdminResource.updateAd(ad, success, error);
-        }
-    };
+    return adsAdminResource;
 }]);

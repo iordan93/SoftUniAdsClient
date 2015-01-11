@@ -94,13 +94,11 @@
                 }
 
                 AdminAdsResource.updateAd(ad, function (data) {
-                    debugger;
                     NotificationService.displaySuccessMessage("Ad edited successfully.");
                     $timeout(function () {
                         $location.path("/admin/ads");
                     }, 5000);
                 }, function (error) {
-                    debugger;
                     NotificationService.displayErrorMessage("Ad could not be edited", error);
                 });
             };
