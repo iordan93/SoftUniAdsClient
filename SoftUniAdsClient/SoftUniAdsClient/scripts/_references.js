@@ -33,4 +33,4 @@
 /// <reference path="controllers/user/userprofilecontroller.js" />
 /// <reference path="services/resources/profileresource.js" />
 /// <reference path="controllers/admin/adminadscontroller.js" />
-/// <reference path="services/resources/adminadsresource.js" />
+/// <reference path="services/resources/admin/adminadsresource.js" />

@@ -1,7 +1,8 @@
 ﻿app.controller("AdminAdsController", ["$scope", "$rootScope", "AdminAdsResource", function ($scope, $rootScope, AdminAdsResource) {
     $scope.parameters = {
         startPage: 1,
-        pageSize: 2
+        pageSize: 2,
+        status: null
     };
 
     $scope.getAds = function () {
@@ -19,6 +20,12 @@
 
     $rootScope.$on("townFilterChanged", function (event, townId) {
         $scope.parameters.townId = townId;
+        $scope.parameters.startPage = 1;
+        $scope.getAds();
+    });
+
+    $rootScope.$on("statusFilterChanged", function (event, status) {
+        $scope.parameters.status = status;
         $scope.parameters.startPage = 1;
         $scope.getAds();
     });
