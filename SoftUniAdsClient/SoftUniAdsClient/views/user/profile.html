@@ -1,0 +1,76 @@
+﻿<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <form class="form-horizontal" name="editProfileForm">
+            <fieldset>
+                <legend>Edit Profile</legend>
+                <div class="form-group">
+                    <label for="edit-name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" ng-model="userData.name" class="form-control" id="edit-name" placeholder="Name" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <input type="email" ng-model="userData.email" class="form-control" id="edit-email" placeholder="Email" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-phone" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" ng-model="userData.phoneNumber" class="form-control" id="edit-phone" placeholder="Phone" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-town" class="col-sm-2 control-label">Town</label>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <select class="form-control" id="edit-town" ng-model="userData.townId">
+                            <option value="null">(None)</option>
+                            <option ng-repeat="town in towns" value="{{ town.id }}">{{ town.name }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary" ng-click="updateProfile(userData)" ng-disabled="!editProfileForm.$valid">Update</button>
+                        <a href="#/" class="btn btn-default">Cancel</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <form class="form-horizontal" name="changePasswordForm">
+            <fieldset>
+                <legend>Change Password</legend>
+                <div class="form-group">
+                    <label for="old-password" class="col-sm-3 control-label">Old password</label>
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                        <input type="password" ng-model="passwordData.oldPassword" class="form-control" id="old-password" placeholder="Old password" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="new-password" class="col-sm-3 control-label">New password</label>
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                        <input type="password" ng-model="passwordData.newPassword" class="form-control" id="new-password" placeholder="New password" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-new-password" class="col-sm-3 control-label">Confirm new password</label>
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                        <input type="password" ng-model="passwordData.confirmPassword" class="form-control" 
+                               id="new-password" placeholder="Confirm new password" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-10">
+                        <button type="submit" class="btn btn-primary" ng-click="updatePassword(passwordData)" ng-disabled="!changePasswordForm.$valid">
+                            Change password
+                        </button>
+                        <a href="#/" class="btn btn-default">Cancel</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

@@ -46,8 +46,8 @@ app
                 pageTitle: "Delete Ad"
             })
             .when("/user/profile", {
-                //templateUrl: "views/register.html",
-                //controller: "LoginController",
+                templateUrl: "views/user/profile.html",
+                controller: "UserProfileController",
                 pageName: "profile",
                 pageTitle: "Edit User Profile"
             })

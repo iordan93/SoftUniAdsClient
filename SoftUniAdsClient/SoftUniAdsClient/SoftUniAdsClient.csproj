@@ -70,13 +70,15 @@
     <Content Include="scripts\controllers\LoginController.js" />
     <Content Include="scripts\controllers\RegisterController.js" />
     <Content Include="scripts\controllers\RightSidebarController.js" />
-    <Content Include="scripts\controllers\UserAdsController.js" />
+    <Content Include="scripts\controllers\user\UserAdsController.js" />
+    <Content Include="scripts\controllers\user\UserProfileController.js" />
     <Content Include="scripts\filters\standard-date.js" />
     <Content Include="scripts\filters\status.js" />
     <Content Include="scripts\services\AccountService.js" />
     <Content Include="scripts\services\NotificationService.js" />
     <Content Include="scripts\services\resources\AdsResource.js" />
     <Content Include="scripts\services\resources\CategoriesResource.js" />
+    <Content Include="scripts\services\resources\ProfileResource.js" />
     <Content Include="scripts\services\resources\TownsResource.js" />
     <Content Include="styles\angular-notify.css" />
     <Content Include="styles\angular-notify.min.css" />
@@ -891,6 +893,7 @@
     <Content Include="views\user\delete-ad.html" />
     <Content Include="views\user\edit-ad.html" />
     <Content Include="views\user\my-ads.html" />
+    <Content Include="views\user\profile.html" />
     <Content Include="views\user\publish-new-ad.html" />
     <Content Include="Web.config" />
   </ItemGroup>
