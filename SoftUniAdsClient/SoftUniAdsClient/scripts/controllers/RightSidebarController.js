@@ -8,9 +8,9 @@
         };
 
         $scope.towns = TownsResource.all();
-         $scope.selectedTownId = null;
+        $scope.selectedTownId = null;
         $scope.selectTown = function (id) {
             $scope.selectedTownId = id;
             $rootScope.$broadcast("townFilterChanged", id);
         };
-}]);
+    }]);

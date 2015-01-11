@@ -1,11 +1,12 @@
 ﻿app.controller("UserAdsController",
-    ["$scope", "$location", "$timeout", "$routeParams", "CategoriesResource", "TownsResource", "AdsResource", "AccountService", "NotificationService",
-    function ($scope, $location, $timeout, $routeParams, CategoriesResource, TownsResource, AdsResource, AccountService, NotificationService) {
+    ["$scope", "$rootScope", "$location", "$timeout", "$routeParams", "CategoriesResource", "TownsResource", "AdsResource", "AccountService", "NotificationService",
+    function ($scope, $rootScope, $location, $timeout, $routeParams, CategoriesResource, TownsResource, AdsResource, AccountService, NotificationService) {
         $scope.categories = CategoriesResource.all();
         $scope.towns = TownsResource.all();
         $scope.parameters = {
             startPage: 1,
-            pageSize: 2
+            pageSize: 2,
+            status: null
         };
 
         $scope.currentAdId = $routeParams.id;
@@ -25,9 +26,9 @@
         $scope.removeImage = function () {
             $scope.editAd.changeImage = true;
             $scope.editAd.imageDataUrl = null;
-            $(".image-box").html();
+            $(".image-box").html("");
             NotificationService.displaySuccessMessage("The image will be removed after the ad has been saved.");
-        }
+        };
 
         $scope.updateAd = function (editAd) {
             if (editAd.imageDataUrl == "images/no-photo.png") {
@@ -42,29 +43,34 @@
             }, function (error) {
                 NotificationService.displayErrorMessage("Ad could not be edited", error);
             });
-        }
+        };
 
         $scope.deleteAd = function (ad) {
             AdsResource.deleteAd(ad, function (data) {
-                debugger;
                 NotificationService.displaySuccessMessage("Ad deleted successfully.");
                 $timeout(function () {
                     $location.path("/user/ads");
                 }, 5000);
             }, function (error) {
-                debugger;
                 NotificationService.displayErrorMessage("Ad could not be deleted", error);
             });
-        }
+        };
 
         $scope.getMyAds = function () {
-            AdsResource.myAds($scope.parameters,
+            AdsResource.myAds(
+                $scope.parameters,
                 function (data) {
                     $scope.adsInfo = data;
                 });
-        }
+        };
 
         $scope.getMyAds();
+
+        $rootScope.$on("statusFilterChanged", function (event, status) {
+            $scope.parameters.status = status;
+            $scope.parameters.startPage = 1;
+            $scope.getMyAds();
+        });
 
         $scope.newAd = {
             townId: null,
@@ -105,6 +111,15 @@
             }
         };
 
+        $scope.publishAgainAd = function (ad) {
+            AdsResource.publishAgainAd(ad, function (data) {
+                NotificationService.displaySuccessMessage("Advertisement submitted for publishing successfully.");
+                $scope.getMyAds();
+            }, function (error) {
+                NotificationService.displaySuccessMessage("Advertisement could not be submitted for publishing.");
+                $scope.getMyAds();
+            });
+        }
 
         $scope.cancel = function () {
             $location.path("/user/ads");
@@ -118,5 +133,5 @@
                 NotificationService.displaySuccessMessage("Advertisement could not be deactivated.");
                 $scope.getMyAds();
             });
-        }
+        };
     }]);

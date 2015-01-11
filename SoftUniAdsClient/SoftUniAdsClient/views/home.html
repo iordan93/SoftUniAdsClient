@@ -1,4 +1,9 @@
 ﻿<ul>
+    <div ng-if="adsInfo.numItems == 0">
+        <div class="jumbotron">
+            <h3>There are currently no ads here.</h3>
+        </div>
+    </div>
     <li ng-repeat="ad in adsInfo.ads" class="list-unstyled">
         <div class="panel panel-default">
             <div class="panel-heading">

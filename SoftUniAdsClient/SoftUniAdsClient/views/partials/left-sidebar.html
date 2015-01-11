@@ -27,6 +27,31 @@
         </div>
     </div>
 
+    <div class="panel panel-primary" ng-if="$route.current.pageName == 'myads'" ng-controller="LeftSidebarController">
+        <div class="panel-heading">
+            <h3 class="panel-title">My Ads</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="filter-all" ng-class="{active: status == null}" ng-click="selectMyAdsStatus(null)">
+                    <a>All</a>
+                </li>
+                <li ng-class="{active: status == 'Published'}" ng-click="selectMyAdsStatus('Published')">
+                    <a>Published</a>
+                </li>
+                <li ng-class="{active: status == 'WaitingApproval'}" ng-click="selectMyAdsStatus('WaitingApproval')">
+                    <a>Waiting Approval</a>
+                </li>
+                <li ng-class="{active: status == 'Inactive'}" ng-click="selectMyAdsStatus('Inactive')">
+                    <a>Inactive</a>
+                </li>
+                <li ng-class="{active: status == 'Rejected'}" ng-click="selectMyAdsStatus('Rejected')">
+                    <a>Rejected</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="panel panel-primary" ng-if="AccountService.isAdmin()">
         <div class="panel-heading">
             <h3 class="panel-title">Administration</h3>

@@ -27,6 +27,12 @@
             params: { id: "@id" },
             headers: AccountService.getAuthHeaders()
         },
+        "publishAgain": {
+            method: "PUT",
+            url: baseUrl + "user/ads/publishAgain/:id",
+            params: { id: "@id" },
+            headers: AccountService.getAuthHeaders()
+        },
         "delete": {
             method: "DELETE",
             params: { id: "@id" },
@@ -63,6 +69,9 @@
         },
         updateAd: function (ad, success, error) {
             return adsUserResource.update(ad, success, error);
+        },
+        publishAgainAd: function (ad, success, error) {
+            return adsUserResource.publishAgain(ad, success, error);
         },
         deleteAd: function (ad, success, error) {
             return adsUserResource.delete(ad, success, error);

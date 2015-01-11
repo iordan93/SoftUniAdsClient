@@ -66,6 +66,7 @@
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\AppController.js" />
     <Content Include="scripts\controllers\HomeController.js" />
+    <Content Include="scripts\controllers\LeftSidebarController.js" />
     <Content Include="scripts\controllers\LoginController.js" />
     <Content Include="scripts\controllers\RegisterController.js" />
     <Content Include="scripts\controllers\RightSidebarController.js" />
