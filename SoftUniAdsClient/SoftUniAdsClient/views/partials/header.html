@@ -1,4 +1,4 @@
-﻿<header>
+﻿<header ng-if="$route.current.pageName.indexOf('admin') == -1">
     <nav class="navbar navbar-default">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -12,6 +12,24 @@
             <ul class="nav navbar-nav navbar-right" ng-if="AccountService.isLoggedIn()">
                 <li><span class="navbar-text">{{ AccountService.getCurrentUser().username }}</span></li>
                 <li><a class="btn btn-primary" ng-click="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<header ng-if="$route.current.pageName.indexOf('admin') != -1">
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <span class="navbar-brand">Ads administration - {{ $route.current.pageTitle }}</span>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right" ng-if="AccountService.isLoggedIn()">
+                <li><span class="navbar-text">{{ AccountService.getCurrentUser().username }}</span></li>
+                <li><a class="btn btn-default" ng-click="logout()">Logout</a></li>
             </ul>
         </div>
     </nav>

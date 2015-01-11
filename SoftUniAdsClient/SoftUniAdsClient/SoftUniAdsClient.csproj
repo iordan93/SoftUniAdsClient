@@ -64,6 +64,7 @@
     <Content Include="lib\angular-ui\ui-bootstrap.js" />
     <Content Include="lib\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\controllers\admin\AdminAdsController.js" />
     <Content Include="scripts\controllers\AppController.js" />
     <Content Include="scripts\controllers\HomeController.js" />
     <Content Include="scripts\controllers\LeftSidebarController.js" />
@@ -76,6 +77,7 @@
     <Content Include="scripts\filters\status.js" />
     <Content Include="scripts\services\AccountService.js" />
     <Content Include="scripts\services\NotificationService.js" />
+    <Content Include="scripts\services\resources\AdminAdsResource.js" />
     <Content Include="scripts\services\resources\AdsResource.js" />
     <Content Include="scripts\services\resources\CategoriesResource.js" />
     <Content Include="scripts\services\resources\ProfileResource.js" />
@@ -883,6 +885,7 @@
     <Content Include="index.html" />
     <Content Include="lib\bootstrap\bootstrap.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />
+    <Content Include="views\admin\ads.html" />
     <Content Include="views\home.html" />
     <Content Include="views\login.html" />
     <Content Include="views\partials\footer.html" />
@@ -900,7 +903,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="scripts\services\resources\admin\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

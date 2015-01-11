@@ -52,8 +52,8 @@ app
                 pageTitle: "Edit User Profile"
             })
             .when("/admin/ads", {
-                //templateUrl: "views/register.html",
-                //controller: "LoginController",
+                templateUrl: "views/admin/ads.html",
+                controller: "AdminAdsController",
                 pageName: "adminAds",
                 pageTitle: "Ads"
             })

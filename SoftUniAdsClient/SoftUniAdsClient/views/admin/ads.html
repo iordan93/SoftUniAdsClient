@@ -1,0 +1,41 @@
+﻿<ul>
+    <div ng-if="adsInfo.numItems == 0">
+        <div class="jumbotron">
+            <h3>There are currently no ads here.</h3>
+        </div>
+    </div>
+    <li ng-repeat="ad in adsInfo.ads" class="list-unstyled">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>
+                    <strong>{{ ad.title }}</strong>
+                    <span class="pull-right">{{ ad.date | standardDate }}</span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <img src="" alt="{{ ad.title }}" ng-src="{{ ad.imageDataUrl }}" class="item-image" />
+                        <div class="text-center">Status:</div>
+                        <div class="well text-center">{{ ad.status | status }}</div>
+                    </div>
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                        <div class="well">{{ ad.text }}</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Username: {{ ad.ownerUsername }}</li>
+                            <li class="list-group-item">Name: {{ ad.ownerName }}</li>
+                            <li class="list-group-item">Email: <a href="mailto://{{ ad.ownerEmail }}">{{ ad.ownerEmail }}</a></li>
+                            <li class="list-group-item">Tel.: {{ ad.ownerPhone }}</li>
+                            <li class="list-group-item">Category: {{ ad.categoryName || "(None)" }}</li>
+                            <li class="list-group-item">Town: {{ ad.townName || "(None)" }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="text-center">
+    <pagination total-items="adsInfo.numItems" ng-model="parameters.startPage" items-per-page="parameters.pageSize"
+                ng-change="getAds()" max-size="9" boundary-links="true"></pagination>
+</div>

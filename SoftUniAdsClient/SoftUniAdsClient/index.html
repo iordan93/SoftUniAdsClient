@@ -11,21 +11,21 @@
     <main class="container-fluid">
         <div class="row">
             <ng-include src="'views/partials/left-sidebar.html'"></ng-include>
-            <div ng-if="$route.current.pageName == 'home'" class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                <alert ng-repeat="notification in notifications" type="{{notification.type}}" close="notification.close($index)">
+            <div ng-if="$route.current.pageName == 'home' || $route.current.pageName == 'adminAds'" class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                <alert ng-repeat="notification in notifications" type="{{ notification.type }}" close="notification.close($index)">
                     <span ng-bind-html="notification.msg"></span>
                 </alert>
 
                 <ng-view></ng-view>
             </div>
-            <div ng-if="$route.current.pageName != 'home'" class="col-lg-10 col-md-10 col-sm-10 col-xs-9">
-                <alert ng-repeat="notification in notifications" type="{{notification.type}}" close="notification.close($index)">
+            <div ng-if="$route.current.pageName != 'home' && $route.current.pageName != 'adminAds'" class="col-lg-10 col-md-10 col-sm-10 col-xs-9">
+                <alert ng-repeat="notification in notifications" type="{{ notification.type }}" close="notification.close($index)">
                     <span ng-bind-html="notification.msg"></span>
                 </alert>
 
                 <ng-view></ng-view>
             </div>
-            <div ng-if="$route.current.pageName == 'home'" ng-include src="'views/partials/right-sidebar.html'"></div>
+            <div ng-if="$route.current.pageName == 'home' || $route.current.pageName == 'adminAds'" ng-include src="'views/partials/right-sidebar.html'"></div>
     </main>
     <ng-include src="'views/partials/footer.html'"></ng-include>
 
@@ -48,6 +48,7 @@
     <script src="scripts/controllers/RegisterController.js"></script>
     <script src="scripts/controllers/user/UserAdsController.js"></script>
     <script src="scripts/controllers/user/UserProfileController.js"></script>
+    <script src="scripts/controllers/admin/AdminAdsController.js"></script>
 
     <script src="scripts/services/NotificationService.js"></script>
     <script src="scripts/services/resources/AdsResource.js"></script>
@@ -55,6 +56,7 @@
     <script src="scripts/services/resources/TownsResource.js"></script>
     <script src="scripts/services/resources/ProfileResource.js"></script>
     <script src="scripts/services/AccountService.js"></script>
+    <script src="scripts/services/resources/AdminAdsResource.js"></script>
 
     <script src="scripts/filters/standard-date.js"></script>
     <script src="scripts/filters/status.js"></script>
