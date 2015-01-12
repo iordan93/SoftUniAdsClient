@@ -60,20 +60,32 @@ app
             .when("/admin/editAd/:id", {
                 templateUrl: "views/admin/edit-ad.html",
                 controller: "AdminAdsController",
-                pageName: "adminEdit",
+                pageName: "adminEditAd",
                 pageTitle: "Edit Ad"
             })
             .when("/admin/deleteAd/:id", {
                 templateUrl: "views/admin/delete-ad.html",
                 controller: "AdminAdsController",
-                pageName: "adminDelete",
+                pageName: "adminDeleteAd",
                 pageTitle: "Delete Ad"
             })
             .when("/admin/users", {
-                //templateUrl: "views/register.html",
-                //controller: "LoginController",
+                templateUrl: "views/admin/users.html",
+                controller: "AdminUsersController",
                 pageName: "adminUsers",
                 pageTitle: "Users"
+            })
+            .when("/admin/users/edit/:id", {
+                templateUrl: "views/admin/edit-user.html",
+                controller: "AdminUsersController",
+                pageName: "adminEditUser",
+                pageTitle: "Edit User"
+            })
+            .when("/admin/users/delete/:id", {
+                templateUrl: "views/admin/delete-user.html",
+                controller: "AdminUsersController",
+                pageName: "adminDeleteUser",
+                pageTitle: "Delete User"
             })
             .when("/admin/categories", {
                 //templateUrl: "views/register.html",

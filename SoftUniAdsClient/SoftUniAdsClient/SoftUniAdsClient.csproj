@@ -78,6 +78,8 @@
     <Content Include="scripts\services\AccountService.js" />
     <Content Include="scripts\services\NotificationService.js" />
     <Content Include="scripts\services\resources\admin\AdminAdsResource.js" />
+    <Content Include="scripts\controllers\admin\AdminUsersController.js" />
+    <Content Include="scripts\services\resources\admin\AdminUsersResource.js" />
     <Content Include="scripts\services\resources\AdsResource.js" />
     <Content Include="scripts\services\resources\CategoriesResource.js" />
     <Content Include="scripts\services\resources\ProfileResource.js" />
@@ -887,7 +889,10 @@
     <Content Include="lib\bootstrap\bootstrap.min.js" />
     <Content Include="views\admin\ads.html" />
     <Content Include="views\admin\delete-ad.html" />
+    <Content Include="views\admin\delete-user.html" />
     <Content Include="views\admin\edit-ad.html" />
+    <Content Include="views\admin\edit-user.html" />
+    <Content Include="views\admin\users.html" />
     <Content Include="views\home.html" />
     <Content Include="views\login.html" />
     <Content Include="views\partials\footer.html" />

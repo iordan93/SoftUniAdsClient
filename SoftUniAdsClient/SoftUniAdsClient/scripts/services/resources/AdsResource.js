@@ -73,8 +73,9 @@
         publishAgainAd: function (ad, success, error) {
             return adsUserResource.publishAgain(ad, success, error);
         },
-        deleteAd: function (ad, success, error) {
-            return adsUserResource.delete(ad, success, error);
+        deleteAd: function (id, success, error) {
+            debugger;
+            return adsUserResource.delete({ id: id }, success, error);
         }
     };
 }]);

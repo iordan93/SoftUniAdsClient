@@ -103,8 +103,8 @@
                 });
             };
 
-            $scope.deleteAd = function (ad) {
-                AdminAdsResource.deleteAd(ad, function (data) {
+            $scope.deleteAd = function (id) {
+                AdminAdsResource.deleteAd({ id: id }, function (data) {
                     NotificationService.displaySuccessMessage("Ad deleted successfully.");
                     $timeout(function () {
                         $location.path("/admin/ads");
