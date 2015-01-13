@@ -6,10 +6,26 @@
 <table class="table table-bordered table-responsive">
     <thead class="item-heading">
         <tr>
-            <td>Username</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Phone</td>
+            <td>
+                Username
+                <span class="glyphicon glyphicon-arrow-up" ng-click="changeSortBy('UserName')"></span>
+                <span class="glyphicon glyphicon-arrow-down" ng-click="changeSortBy('-UserName')"></span>
+            </td>
+            <td>
+                Name
+                <span class="glyphicon glyphicon-arrow-up" ng-click="changeSortBy('Name')"></span>
+                <span class="glyphicon glyphicon-arrow-down" ng-click="changeSortBy('-Name')"></span>
+            </td>
+            <td>
+                Email
+                <span class="glyphicon glyphicon-arrow-up" ng-click="changeSortBy('Email')"></span>
+                <span class="glyphicon glyphicon-arrow-down" ng-click="changeSortBy('-Email')"></span>
+            </td>
+            <td>
+                Phone
+                <span class="glyphicon glyphicon-arrow-up" ng-click="changeSortBy('PhoneNumber')"></span>
+                <span class="glyphicon glyphicon-arrow-down" ng-click="changeSortBy('-PhoneNumber')"></span>
+            </td>
             <td>Actions</td>
         </tr>
     </thead>
