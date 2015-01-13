@@ -20,8 +20,8 @@
             <td>{{ user.email }}</td>
             <td>{{ user.phoneNumber || "(None)" }}</td>
             <td>
-                <button class="btn btn-sm btn-warning" ng-click="editUser(user)">Edit</button>
-                <button class="btn btn-danger btn-sm" ng-click="deleteUser(user)">Delete</button>
+                <a href="#/admin/users/edit/{{ user.id }}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="#/admin/users/delete/{{ user.id }}" class="btn btn-danger btn-sm" ng-click="deleteUser(user.id)">Delete</a>
             </td>
         </tr>
     </tbody>

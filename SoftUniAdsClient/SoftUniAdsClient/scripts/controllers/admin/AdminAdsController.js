@@ -76,9 +76,9 @@
 
             if ($scope.currentAdId) {
                 AdminAdsResource.all({ id: $scope.currentAdId },
-                    function (data) {
-                        $scope.editAd = data;
-                    });
+                function (data) {
+                    $scope.editAd = data;
+                });
             }
 
             $scope.removeImage = function () {
