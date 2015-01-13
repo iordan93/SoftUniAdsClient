@@ -6,13 +6,19 @@
         },
         "updateProfile": {
             method: "PUT",
-            url:baseUrl + "admin/user/:username",
+            url: baseUrl + "admin/user/:username",
             params: { username: "@userName" },
             headers: AccountService.getAuthHeaders()
         },
         "updatePassword": {
             method: "PUT",
             url: baseUrl + "admin/setPassword",
+            headers: AccountService.getAuthHeaders()
+        },
+        "delete": {
+            method: "DELETE",
+            url: baseUrl + "admin/user/:username",
+            params: { username: "@username" },
             headers: AccountService.getAuthHeaders()
         }
     });

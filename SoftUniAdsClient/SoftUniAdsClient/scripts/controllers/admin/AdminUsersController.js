@@ -48,18 +48,27 @@
 
             $scope.editPassword.username = $scope.editUser.userName;
             AdminUsersResource.updatePassword($scope.editPassword, function (data) {
-                debugger;
-                NotificationService.displaySuccessMessage("The password edited successfully.");
+                NotificationService.displaySuccessMessage("The password was edited successfully.");
                 $timeout(function () {
                     $location.path("/admin/users");
                 }, 5000);
             }, function (error) {
-                debugger;
                 NotificationService.displayErrorMessage("The password could not be edited", error);
             });
-        }
+        };
+
+        $scope.deleteUser = function () {
+            AdminUsersResource.delete({ username: $scope.editUser.userName }, function (data) {
+                NotificationService.displaySuccessMessage("The user was deleted successfully.");
+                $timeout(function () {
+                    $location.path("/admin/users");
+                }, 5000);
+            }, function (error) {
+                NotificationService.displayErrorMessage("The user could not be deleted", error);
+            });
+        };
 
         $scope.cancel = function () {
-            $location.path("/");
+            $location.path("/admin/users");
         }
     }]);
