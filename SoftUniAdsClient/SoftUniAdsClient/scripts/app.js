@@ -52,85 +52,85 @@ app
                 pageTitle: "Edit User Profile"
             })
             .when("/admin/ads", {
-                templateUrl: "views/admin/ads.html",
+                templateUrl: "views/admin/ads/ads.html",
                 controller: "AdminAdsController",
                 pageName: "adminAds",
                 pageTitle: "Ads"
             })
-            .when("/admin/editAd/:id", {
-                templateUrl: "views/admin/edit-ad.html",
+            .when("/admin/ads/edit/:id", {
+                templateUrl: "views/admin/ads/edit-ad.html",
                 controller: "AdminAdsController",
                 pageName: "adminEditAd",
                 pageTitle: "Edit Ad"
             })
-            .when("/admin/deleteAd/:id", {
-                templateUrl: "views/admin/delete-ad.html",
+            .when("/admin/ads/delete/:id", {
+                templateUrl: "views/admin/ads/delete-ad.html",
                 controller: "AdminAdsController",
                 pageName: "adminDeleteAd",
                 pageTitle: "Delete Ad"
             })
             .when("/admin/users", {
-                templateUrl: "views/admin/users.html",
+                templateUrl: "views/admin/users/users.html",
                 controller: "AdminUsersController",
                 pageName: "adminUsers",
                 pageTitle: "Users"
             })
             .when("/admin/users/edit/:id", {
-                templateUrl: "views/admin/edit-user.html",
+                templateUrl: "views/admin/users/edit-user.html",
                 controller: "AdminUsersController",
                 pageName: "adminEditUser",
                 pageTitle: "Edit User"
             })
             .when("/admin/users/delete/:id", {
-                templateUrl: "views/admin/delete-user.html",
+                templateUrl: "views/admin/users/delete-user.html",
                 controller: "AdminUsersController",
                 pageName: "adminDeleteUser",
                 pageTitle: "Delete User"
             })
             .when("/admin/categories", {
-                templateUrl: "views/admin/categories.html",
+                templateUrl: "views/admin/categories/categories.html",
                 controller: "AdminCategoriesController",
                 pageName: "adminCategories",
                 pageTitle: "Categories"
             })
             .when("/admin/categories/create/", {
-                templateUrl: "views/admin/create-category.html",
+                templateUrl: "views/admin/categories/create-category.html",
                 controller: "AdminCategoriesController",
                 pageName: "adminCreateCategory",
                 pageTitle: "Create Category"
             })
             .when("/admin/categories/edit/:id", {
-                templateUrl: "views/admin/edit-category.html",
+                templateUrl: "views/admin/categories/edit-category.html",
                 controller: "AdminCategoriesController",
                 pageName: "adminEditCategory",
                 pageTitle: "Edit Category"
             })
             .when("/admin/categories/delete/:id", {
-                templateUrl: "views/admin/delete-category.html",
+                templateUrl: "views/admin/categories/delete-category.html",
                 controller: "AdminCategoriesController",
                 pageName: "adminDeleteCategory",
                 pageTitle: "Delete Category"
             })
             .when("/admin/towns", {
-                templateUrl: "views/admin/towns.html",
+                templateUrl: "views/admin/towns/towns.html",
                 controller: "AdminTownsController",
                 pageName: "adminTowns",
                 pageTitle: "Towns"
             })
             .when("/admin/towns/create/", {
-                templateUrl: "views/admin/create-town.html",
+                templateUrl: "views/admin/towns/create-town.html",
                 controller: "AdminTownsController",
                 pageName: "adminCreateTown",
                 pageTitle: "Create Town"
             })
             .when("/admin/towns/edit/:id", {
-                templateUrl: "views/admin/edit-town.html",
+                templateUrl: "views/admin/towns/edit-town.html",
                 controller: "AdminTownsController",
                 pageName: "adminEditTown",
                 pageTitle: "Edit Town"
             })
             .when("/admin/towns/delete/:id", {
-                templateUrl: "views/admin/delete-town.html",
+                templateUrl: "views/admin/towns/delete-town.html",
                 controller: "AdminTownsController",
                 pageName: "adminDeleteTown",
                 pageTitle: "Delete Town"
