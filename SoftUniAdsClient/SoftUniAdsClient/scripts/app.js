@@ -1,6 +1,6 @@
 ﻿var app = angular.module("softUniAds", ["ngRoute", "ngResource", "ui.bootstrap"]);
 app
-    .constant("baseUrl", "http://softuni-ads.azurewebsites.net/api/")
+    .constant("baseUrl", "http://localhost:1337/api/")
     .config(["$routeProvider", function ($routeProvider) {
         $routeProvider
             .when("/", {
@@ -88,16 +88,52 @@ app
                 pageTitle: "Delete User"
             })
             .when("/admin/categories", {
-                //templateUrl: "views/register.html",
-                //controller: "LoginController",
+                templateUrl: "views/admin/categories.html",
+                controller: "AdminCategoriesController",
                 pageName: "adminCategories",
                 pageTitle: "Categories"
             })
+            .when("/admin/categories/create/", {
+                templateUrl: "views/admin/create-category.html",
+                controller: "AdminCategoriesController",
+                pageName: "adminCreateCategory",
+                pageTitle: "Create Category"
+            })
+            .when("/admin/categories/edit/:id", {
+                templateUrl: "views/admin/edit-category.html",
+                controller: "AdminCategoriesController",
+                pageName: "adminEditCategory",
+                pageTitle: "Edit Category"
+            })
+            .when("/admin/categories/delete/:id", {
+                templateUrl: "views/admin/delete-category.html",
+                controller: "AdminCategoriesController",
+                pageName: "adminDeleteCategory",
+                pageTitle: "Delete Category"
+            })
             .when("/admin/towns", {
-                //templateUrl: "views/register.html",
-                //controller: "LoginController",
+                templateUrl: "views/admin/towns.html",
+                controller: "AdminTownsController",
                 pageName: "adminTowns",
                 pageTitle: "Towns"
+            })
+            .when("/admin/towns/create/", {
+                templateUrl: "views/admin/create-town.html",
+                controller: "AdminTownsController",
+                pageName: "adminCreateTown",
+                pageTitle: "Create Town"
+            })
+            .when("/admin/towns/edit/:id", {
+                templateUrl: "views/admin/edit-town.html",
+                controller: "AdminTownsController",
+                pageName: "adminEditTown",
+                pageTitle: "Edit Town"
+            })
+            .when("/admin/towns/delete/:id", {
+                templateUrl: "views/admin/delete-town.html",
+                controller: "AdminTownsController",
+                pageName: "adminDeleteTown",
+                pageTitle: "Delete Town"
             })
             .otherwise({
                 redirectTo: "/"

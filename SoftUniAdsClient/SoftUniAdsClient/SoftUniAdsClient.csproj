@@ -65,6 +65,8 @@
     <Content Include="lib\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\admin\AdminAdsController.js" />
+    <Content Include="scripts\controllers\admin\AdminTownsController.js" />
+    <Content Include="scripts\controllers\admin\AdminCategoriesController.js" />
     <Content Include="scripts\controllers\AppController.js" />
     <Content Include="scripts\controllers\HomeController.js" />
     <Content Include="scripts\controllers\LeftSidebarController.js" />
@@ -79,6 +81,8 @@
     <Content Include="scripts\services\NotificationService.js" />
     <Content Include="scripts\services\resources\admin\AdminAdsResource.js" />
     <Content Include="scripts\controllers\admin\AdminUsersController.js" />
+    <Content Include="scripts\services\resources\admin\AdminTownsResource.js" />
+    <Content Include="scripts\services\resources\admin\AdminCategoriesResource.js" />
     <Content Include="scripts\services\resources\admin\AdminUsersResource.js" />
     <Content Include="scripts\services\resources\AdsResource.js" />
     <Content Include="scripts\services\resources\CategoriesResource.js" />
@@ -888,10 +892,18 @@
     <Content Include="lib\bootstrap\bootstrap.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />
     <Content Include="views\admin\ads.html" />
+    <Content Include="views\admin\categories.html" />
+    <Content Include="views\admin\create-category.html" />
+    <Content Include="views\admin\create-town.html" />
     <Content Include="views\admin\delete-ad.html" />
+    <Content Include="views\admin\delete-category.html" />
+    <Content Include="views\admin\delete-town.html" />
     <Content Include="views\admin\delete-user.html" />
     <Content Include="views\admin\edit-ad.html" />
+    <Content Include="views\admin\edit-category.html" />
+    <Content Include="views\admin\edit-town.html" />
     <Content Include="views\admin\edit-user.html" />
+    <Content Include="views\admin\towns.html" />
     <Content Include="views\admin\users.html" />
     <Content Include="views\home.html" />
     <Content Include="views\login.html" />

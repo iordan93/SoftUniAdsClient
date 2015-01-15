@@ -1,0 +1,41 @@
+﻿<div ng-if="townsInfo.numItems == 0">
+    <div class="jumbotron">
+        <h3>There are currently no towns here.</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <a href="#/admin/towns/create" class="btn btn-block btn-success">Create new town</a>
+    </div>
+</div>
+<table class="table table-bordered table-responsive">
+    <thead class="item-heading">
+        <tr>
+            <td>
+                Id
+                <span class="glyphicon glyphicon-arrow-up" ng-click="changeSortBy('Id')"></span>
+                <span class="glyphicon glyphicon-arrow-down" ng-click="changeSortBy('-Id')"></span>
+            </td>
+            <td>
+                Name
+                <span class="glyphicon glyphicon-arrow-up" ng-click="changeSortBy('Name')"></span>
+                <span class="glyphicon glyphicon-arrow-down" ng-click="changeSortBy('-Name')"></span>
+            </td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="town in townsInfo.towns">
+            <td>{{ town.id }}</td>
+            <td>{{ town.name }}</td>
+            <td>
+                <a href="#/admin/towns/edit/{{ town.id }}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="#/admin/towns/delete/{{ town.id }}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="text-center">
+    <pagination total-items="townsInfo.numItems" ng-model="parameters.startPage" items-per-page="parameters.pageSize"
+                ng-change="getTowns()" max-size="9" boundary-links="true"></pagination>
+</div>

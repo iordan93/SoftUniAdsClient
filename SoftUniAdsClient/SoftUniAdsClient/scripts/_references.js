@@ -36,3 +36,7 @@
 /// <reference path="services/resources/admin/adminadsresource.js" />
 /// <reference path="controllers/admin/adminuserscontroller.js" />
 /// <reference path="services/resources/admin/adminusersresource.js" />
+/// <reference path="controllers/admin/admincategoriescontroller.js" />
+/// <reference path="services/resources/admin/admincategoriesresource.js" />
+/// <reference path="controllers/admin/admintownscontroller.js" />
+/// <reference path="services/resources/admin/admintownsresource.js" />
